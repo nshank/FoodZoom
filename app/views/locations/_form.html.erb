@@ -1,0 +1,31 @@
+<%= form_for(@location) do |l| %>
+	
+	<div class="field">
+  		<%= l.label :truck_id %><br />
+		<%= l.collection_select :truck_id, @trucks, :id, :name,
+		{ :prompt => "Please select a truck"} %>
+	</div>
+	
+	<div class="field">
+		<%= l.label :date %>
+		<%= l.date_select :date, :discard_year => true %>
+	</div>
+	
+	<div class="field">
+		<%= l.label :address %>
+		<%= l.text_field :address %>
+	</div>
+	
+	<div class="field">
+		<%= l.label :latitude %>
+		<%= l.text_field :latitude %>
+	</div>
+	
+	<div class="field">
+		<%= l.label :longitude %>
+		<%= l.text_field :longitude %>
+	</div>
+	
+	<%= l.submit %>
+	
+<% end %>

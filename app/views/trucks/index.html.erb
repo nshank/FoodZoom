@@ -1,0 +1,25 @@
+<div class="row">
+<h1>Listing trucks</h1>
+<%= link_to 'New Truck', new_truck_path %>
+</div>
+
+<div class="row">
+	<div class="four columns">
+		<ul>
+		<% @trucks.each do |truck| %>
+			<li>
+				<h4><%= truck.name %></h4>
+				<div class="truck-content">
+					<%= truck.website %><br /> 
+					<%= truck.twitter_name %><br />
+					<%= truck.info %><br />
+					<%= link_to 'Edit', edit_truck_path(truck) %> | <%= link_to 'Destroy', truck, confirm: 'Are you sure?', method: :delete %>
+				</div>
+			</li>
+		<% end %>
+		</ul>
+	</div>
+	<div class="eight columns">
+		MAP GOES HERE
+	</div>
+</div>

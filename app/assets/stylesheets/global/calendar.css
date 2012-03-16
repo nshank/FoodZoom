@@ -1,0 +1,17 @@
+ul.calendar {
+	list-style-type: none;
+	height:30px;
+}
+
+ul.calendar li {
+	float:left;
+}
+
+ul.calendar li a {
+	padding:10px 8px;
+	border:1px solid #ccc;
+}
+
+ul.calendar li a:hover {
+	background:#FFFF00;
+}

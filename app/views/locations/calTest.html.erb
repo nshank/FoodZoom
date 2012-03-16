@@ -1,0 +1,19 @@
+
+<div id="dsel1" style="width:240px"></div>
+
+<script type="text/javascript">
+
+
+  var calendarPicker1 = $("#dsel1").calendarPicker({
+    monthNames:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    //useWheel:true,
+    //callbackDelay:500,
+    //years:1,
+    //months:3,
+    //days:4,
+    //showDayArrows:false,
+    callback:function(cal) {
+      $("#wtf").html("Selected date: " + cal.currentDate);
+    }});
+</script>
