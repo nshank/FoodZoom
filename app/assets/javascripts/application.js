@@ -21,9 +21,11 @@ $(function() {
 
 	var calendarPicker1 = $("#dsel1").calendarPicker({
     months:0,
-    showDayArrows:true,
+		days:3,
+    showDayArrows:false,
     callback:function(cal) {
-      $("#wtf").html("Selected date: " + cal.currentDate);
+      $("#.calDay.calElement").html("Selected date: " + cal.currentDate);
+			
 //ADD UPDATE TO DATE FILTER VIA DATE_SELECT IN LOCATION CONTROLLER -----------------------------------------------------------------
     }});
 

@@ -15,3 +15,98 @@ ul.calendar li a {
 ul.calendar li a:hover {
 	background:#FFFF00;
 }
+
+/* --------- BEGIN JQUERY CALENDAR ------------------------- */
+
+.calBox {
+/*  background-color: #928d81;
+  padding: 2px;
+  border-radius: 4px;
+  text-align: center;
+  color: white;*/
+}
+
+.calElement {
+  margin: 1px;
+  display: inline-block;
+  overflow:hidden;
+}
+
+.calYear {
+ /* font-size: 20px;
+   border-bottom: 1px dashed #666;
+   padding-bottom: 5px;
+   margin-bottom: 5px*/
+	 display:none;
+}
+
+.calYear .calElement {
+	
+/*  border: 1px solid #999999;*/
+}
+
+.calMonth {
+	
+}
+
+.calMonth .calElement {
+  font-size: 14px;
+	color:#000;
+/*  border: 1px solid #999999;*/
+}
+
+h5.calMonthElement {
+	font-weight:bold;
+	font-size:1em;
+	letter-spacing: -0.03em;
+	color: #33383D;
+}
+
+.day-name {
+	text-align:center;
+	background:#ccc;
+}
+
+.calDay {
+	height:60px;
+}
+
+.calDay .calElement {
+  font-size: 10px;
+	color:#000;
+	padding:2px;
+	width:35px;
+	cursor: pointer;
+	border: 1px solid #999999;
+}
+
+.calDay .calElement.prev {
+  /*background: transparent url(images/prev.png) no-repeat 0 18px;
+    width: 6px;
+    height: 35px*/
+}
+
+.calDay .calElement.next {
+  background: transparent url(images/next.png) no-repeat 0 18px;
+  width: 6px;
+  height: 35px;
+}
+
+span.calElement.next:hover, span.calElement.prev:hover {
+  border: 1px solid #999999;
+  cursor: pointer;
+}
+
+.calDay .calElement .dayNumber {
+	font-size: 16px;
+	padding-left:8px;
+}
+
+.calElement.selected {
+  /*background-color: #404040;*/
+  border: 2px solid #146d8d;
+}
+
+.calElement.today {
+  border: 1px solid #999999;
+}

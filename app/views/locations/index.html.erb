@@ -1,23 +1,11 @@
 <div class="row">
-	<h1>FoodZoom</h1>
+	<h1>Title</h1>
 	<p><%= link_to 'Add Location', new_location_path %></p>
 </div>
 
 <div class="row">
 	<div class="four columns">
-		
-		<div id="dsel1" style="width:240px"></div>
-		
-		<!-- <ul class="calendar">
-					
-					<li><%= link_to Date.today.day, trucks_url %></li>
-					<li><%= link_to Date.today.day + 1, trucks_url %></li>
-					<li><%= link_to Date.today.day + 2, trucks_url %></li>
-					<li><%= link_to Date.today.day + 3, trucks_url %></li>
-					<li><%= link_to Date.today.day + 4, trucks_url %></li>
-					<li><%= link_to Date.today.day + 5, trucks_url %></li>
-					<li><%= link_to Date.today.day + 6, trucks_url %></li>
-				</ul> -->
+		<div id="dsel1"></div>
 	</div>
 	<div class="eight columns">
 		
@@ -26,22 +14,8 @@
 
 <div class="row">
 	<div class="four columns">
-		<ul id="markers_list" class="marker_list">  </ul>
-		<!-- <ul>
-							<% @locations.each do |location| %>
-							<li>
-								<h4><%= location.truck.name %></h4>
-								<div class="content">
-									Address: <%= location.address %><br />
-									Date: <%= location.date.strftime("%A, %b %d") %><br />
-									Long: <%= location.longitude %><br />
-									Lat: <%= location.latitude %><br />
-									<%= link_to 'Destroy', location, confirm: 'Are you sure?', method: :delete %>
-								</div>
-							</li>
-							<% end %>
-							</ul> -->
-		<ul id="markers_list">  </ul>
+		<ul id="markers_list" class="marker_list">
+		</ul>
 	</div>
 	<div class="eight columns">
 		<%= gmaps( 
