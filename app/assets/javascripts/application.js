@@ -24,10 +24,17 @@ $(function() {
 		days:3,
     showDayArrows:false,
     callback:function(cal) {
-      $("#.calDay.calElement").html("Selected date: " + cal.currentDate);
-			
+			$(".calDay. calElement").html(cal.currentDate);
+			$("#mydate").html(cal.currentDate + 1);
 //ADD UPDATE TO DATE FILTER VIA DATE_SELECT IN LOCATION CONTROLLER -----------------------------------------------------------------
     }});
+
+		var dateSelector;
+		$(function(){
+		  dateSelector = $("#calElement").calendarPicker({callback:function(cal){
+		    alert(cal.currentDate);
+		  }});
+		});
 
 });
 
