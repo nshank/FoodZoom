@@ -14,7 +14,7 @@ class Location < ActiveRecord::Base
   end
   
   def gmaps4rails_infowindow
-    "#{self.address}"
+    "#{self.truck.name}"
   end
   
   def gmaps4rails_sidebar

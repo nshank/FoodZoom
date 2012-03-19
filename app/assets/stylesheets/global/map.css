@@ -12,4 +12,11 @@ div.info-win {
 	background:red;
 }
 
-.yellow { border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px; }
+.info-box { 
+	border: 1px solid #33363b;
+	border-radius:4px;
+	margin-top: 8px;
+	background: #fff; 
+	padding: 8px;
+	font-weight:bold; 
+}

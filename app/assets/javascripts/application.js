@@ -17,25 +17,44 @@
 //= require gmaps4rails/googlemaps.js
 
 $(function() {
-  $("#location_date").datepicker();
+  //$("#location_date").datepicker();
 
-	var calendarPicker1 = $("#dsel1").calendarPicker({
-    months:0,
-		days:3,
-    showDayArrows:false,
-    callback:function(cal) {
-			$(".calDay. calElement").html(cal.currentDate);
-			$("#mydate").html(cal.currentDate + 1);
-//ADD UPDATE TO DATE FILTER VIA DATE_SELECT IN LOCATION CONTROLLER -----------------------------------------------------------------
-    }});
-
-		var dateSelector;
-		$(function(){
-		  dateSelector = $("#calElement").calendarPicker({callback:function(cal){
-		    alert(cal.currentDate);
-		  }});
-		});
-
+	// var calendarPicker1 = $("#dsel1").calendarPicker({
+	//     months:0,
+	// 	days:3,
+	//     showDayArrows:false,
+	//     
+	// 	callback:function(cal) {
+	// 	 		// $("#wtf").html("Selected date: " + cal.currentDate);
+	// 			$("#dsel1").attr(cal.currentDate);
+	// 			console.log(cal);
+	// 	}});
+		
+		// $('body').html("<h1><%= escape_javaScript(@post.title) %></h1>").append("<%= escape_javaScript(@post.content) %>");  
+		
+		//---------CUSTOM INFO BOX ------------------------------------
+		
+		Gmaps.map.infobox = function(boxText) {
+		  return {
+		    content: boxText,
+				disableAutoPan: false,
+				maxWidth: 0,
+				pixelOffset: new google.maps.Size(-140, 0),
+				zIndex: null,
+				boxStyle: { 
+		    	background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.5/examples/tipbox.gif') no-repeat",
+					// opacity: 0.75,
+					width: "280px"
+		    },
+				closeBoxMargin: "12px 6px 2px 2px",
+				closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+				infoBoxClearance: new google.maps.Size(1, 1),
+				isHidden: false,
+				pane: "floatPane",
+				enableEventPropagation: false
+		 }};
+		
+		
 });
 
 

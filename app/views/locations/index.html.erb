@@ -5,7 +5,17 @@
 
 <div class="row">
 	<div class="four columns">
-		<div id="dsel1"></div>
+		<div id="cal">
+			<ul>
+				<li><%= link_to -2.days.from_now.strftime('%a %d'), locations_path %></li>
+				<li><%= -1.days.from_now.strftime('%a %d') %></li>
+				<li><%= link_to Date.today.strftime('%a %d'), locations_path %></li>
+				<li><%= link_to 1.days.from_now.strftime('%a %d'), locations_path %></li>
+				<li><%= 2.days.from_now.strftime('%a %d') %></li>
+			</ul>
+		</div>
+		<!-- <div id="dsel1"></div> -->
+		<span id="wtf"></span>
 	</div>
 	<div class="eight columns">
 		
@@ -19,7 +29,7 @@
 	</div>
 	<div class="eight columns">
 		<%= gmaps( 
-			:markers => { :data => @json, :options => { "list_container" => "markers_list" } }, 
+			:markers => { :data => @json, :options => { "list_container" => "markers_list", "custom_infowindow_class" => "info-box" } }, 
 			:map_options => { :auto_adjust => true, # :auto_adjust map to center on location
 					  :auto_zoom => true }	# :auto_zoom defaults to full zoom in, set to false to utilize :zoom
 		) %>
