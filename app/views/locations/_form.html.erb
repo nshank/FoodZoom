@@ -6,9 +6,14 @@
 		{ :prompt => "Please select a truck"} %>
 	</div>
 	
-	<div class="field">
+	<!-- <div class="field">
 		<%= l.label :date %>
 		<%= l.date_select :date, :discard_year => true %>
+	</div> -->
+	
+	<div class="field">
+		<%= l.label :date %>
+		<%= l.text_field :date %>
 	</div>
 	
 	<div class="field">

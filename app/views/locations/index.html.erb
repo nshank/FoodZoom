@@ -1,21 +1,27 @@
-<div class="row">
-	<h1>Title</h1>
-	<p><%= link_to 'Add Location', new_location_path %></p>
-</div>
+<header>
+	<div class="row">
+		<h1>Title</h1>
+		<p><%= link_to 'Add Location', new_location_path %></p>
+	</div>
+</header>
 
 <div class="row">
 	<div class="four columns">
 		<div id="cal">
-			<ul>
-				<li><%= link_to -2.days.from_now.strftime('%a %d'), locations_path %></li>
-				<li><%= -1.days.from_now.strftime('%a %d') %></li>
-				<li><%= link_to Date.today.strftime('%a %d'), locations_path %></li>
-				<li><%= link_to 1.days.from_now.strftime('%a %d'), locations_path %></li>
-				<li><%= 2.days.from_now.strftime('%a %d') %></li>
-			</ul>
+			<!-- <%= form_tag locations_path, :method => 'get' do %>
+				<%= text_field_tag :date %>
+				<%= submit_tag "filter" %>
+			<% end %> -->
+			<!-- <ul>
+							<li><%= link_to -2.days.from_now.strftime('%a %d'), locations_path(:date => -2.days.from_now.to_date) %></li>
+							<li><%= link_to -1.days.from_now.strftime('%a %d'), locations_path(:date => -1.days.from_now.to_date) %></li>
+							<li><%= link_to Date.today.strftime('%a %d'), locations_path(:date => Date.today.to_date) %></li>
+							<li><%= link_to 1.days.from_now.strftime('%a %d'), locations_path(:date => 1.days.from_now.to_date) %></li>
+							<li><%= link_to 2.days.from_now.strftime('%a %d'), locations_path(:date => 2.days.from_now.to_date) %></li>
+						</ul> -->
 		</div>
-		<!-- <div id="dsel1"></div> -->
-		<span id="wtf"></span>
+		<span id="currentDate"></span>
+		<div id="dsel1"></div>
 	</div>
 	<div class="eight columns">
 		
@@ -33,5 +39,30 @@
 			:map_options => { :auto_adjust => true, # :auto_adjust map to center on location
 					  :auto_zoom => true }	# :auto_zoom defaults to full zoom in, set to false to utilize :zoom
 		) %>
+		
+		<div class="info-window">
+			<%= render 'truckDetail' %>
+		</div>
 	</div>
 </div>
+
+
+<% content_for :scripts do %>
+   <script type="text/javascript" charset="utf-8">
+
+    // window.locationId = "<%=j locations_url %>"; 
+
+	Gmaps.map.callback = function() {
+		
+		// $('ul#markers_list li a').bind('ajax:before', function() {
+		// 						$(this).data('params', {:location})
+		// 					});
+			
+		$('ul#markers_list li a').click(function() {
+							var id = $(this).text();
+							console.log(id);
+						});
+	};
+
+   </script>
+<% end %>

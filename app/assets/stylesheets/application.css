@@ -10,9 +10,12 @@
  *
  *= require global/foundation
  *= require global/ie
+ *= require global/global
  *= require global/calendar
  *= require gmaps4rails
  *= require global/map
  *= require global/list
+ 
+ 
 
 */

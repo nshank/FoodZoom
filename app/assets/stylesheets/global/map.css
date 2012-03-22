@@ -1,3 +1,6 @@
+#mapCanvas label { width: auto; display:inline; }
+#mapCanvas img { max-width: none; }
+
 .map_container {
 	width:100%;
 }
@@ -16,7 +19,8 @@ div.info-win {
 	border: 1px solid #33363b;
 	border-radius:4px;
 	margin-top: 8px;
-	background: #fff; 
+	background: #000; 
 	padding: 8px;
 	font-weight:bold; 
+	color:#fff;
 }

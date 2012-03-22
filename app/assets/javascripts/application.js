@@ -17,20 +17,17 @@
 //= require gmaps4rails/googlemaps.js
 
 $(function() {
-  //$("#location_date").datepicker();
-
-	// var calendarPicker1 = $("#dsel1").calendarPicker({
-	//     months:0,
-	// 	days:3,
-	//     showDayArrows:false,
-	//     
-	// 	callback:function(cal) {
-	// 	 		// $("#wtf").html("Selected date: " + cal.currentDate);
-	// 			$("#dsel1").attr(cal.currentDate);
-	// 			console.log(cal);
-	// 	}});
-		
-		// $('body').html("<h1><%= escape_javaScript(@post.title) %></h1>").append("<%= escape_javaScript(@post.content) %>");  
+  $("#location_date").datepicker();
+	$("#date").datepicker();
+	
+	var calendarPicker1 = $("#dsel1").calendarPicker({
+	    months:0,
+		  days:3,
+	    showDayArrows:false,
+	    
+		callback:function(cal) {
+				$("#currentDate").html("Selected date: " + cal.currentDate.toDateString());
+		}});
 		
 		//---------CUSTOM INFO BOX ------------------------------------
 		
@@ -43,7 +40,7 @@ $(function() {
 				zIndex: null,
 				boxStyle: { 
 		    	background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.5/examples/tipbox.gif') no-repeat",
-					// opacity: 0.75,
+					opacity: 0.75,
 					width: "280px"
 		    },
 				closeBoxMargin: "12px 6px 2px 2px",
@@ -53,9 +50,5 @@ $(function() {
 				pane: "floatPane",
 				enableEventPropagation: false
 		 }};
-		
-		
 });
-
-
   

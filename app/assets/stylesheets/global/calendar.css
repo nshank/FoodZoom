@@ -18,6 +18,10 @@ ul.calendar li a:hover {
 
 /* --------- BEGIN JQUERY CALENDAR ------------------------- */
 
+#currentDate {
+	color:#fff;
+}
+
 .calBox {
 /*  background-color: #928d81;
   padding: 2px;
@@ -104,7 +108,7 @@ span.calElement.next:hover, span.calElement.prev:hover {
 
 .calElement.selected {
   /*background-color: #404040;*/
-  border: 2px solid #146d8d;
+  border: 2px solid #FFF;
 }
 
 .calElement.today {

@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 gem 'gmaps4rails'
 gem 'twitter'
+gem 'gon'
 
 
 # Gems used only for assets and not required

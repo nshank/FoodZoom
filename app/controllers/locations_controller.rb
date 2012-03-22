@@ -1,24 +1,38 @@
 class LocationsController < ApplicationController
   
   def index
-    #PASSES DATES TO SCOPE
-    #@locations = Location.date_filter(Date.today.beginning_of_day, Date.today.end_of_day)
-    
     @trucks = Truck.all
-    
-    # GET TRUCKS FOR GOOGLE MAPS
-    @json = Location.date_filter(Date.today.beginning_of_day, Date.today.end_of_day).to_gmaps4rails
-    
-    #@json = Location.all.to_gmaps4rails
+
+     # GET TRUCKS FOR GOOGLE MAPS
+     
+    if params[:date]
+      @json = Location.date_filter(:date).to_gmaps4rails do |location, marker|
+             marker.infowindow render_to_string(:partial => "/locations/info_box", :locals => { :location => location})
+             marker.sidebar(location.truck.name)
+             marker.json({ :id => location.id })
+           end
+    else
+      @json = Location.where("date = ?", Date.today ).to_gmaps4rails do |location, marker|
+            marker.infowindow render_to_string(:partial => "/locations/info_box", :locals => { :location => location})
+            marker.sidebar(location.truck.name)
+            marker.json({ :id => location.id })
+          end
+    end
   end
-  
-  # def date_select
-  #    @locations = Location.date_filter(Date.today.beginning_of_day, Date.today.end_of_day).to_gmap4rails
-  #  end
+
   
   def new
     @location = Location.new
     @trucks = Truck.all
+  end
+  
+  def show
+    @location = Location.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @location }
+    end
   end
   
   def create
